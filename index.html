@@ -168,6 +168,18 @@ section{padding:clamp(64px,9vw,110px) 0}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* Journey */
+.sales{position:relative;overflow:hidden}
+.sales::before{content:"";position:absolute;right:-160px;top:-160px;width:460px;height:460px;border-radius:50%;border:2px solid rgba(46,196,182,.18);box-shadow:0 0 0 40px rgba(46,196,182,.04),0 0 0 80px rgba(46,196,182,.03)}
+.sales-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:44px;position:relative}
+.sales-head h2{margin-bottom:0}
+.sales-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.s-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--teal);border-radius:16px;padding:26px 24px}
+.s-num{display:block;font-size:.8rem;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:14px}
+.s-card h3{font-size:1.08rem;margin-bottom:8px}
+.s-card p{font-size:.9rem;color:#B9C6D3}
+.sales-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);position:relative}
+.sales-foot p{font-size:.92rem;color:#AFC0CF;max-width:560px}
+.sales-foot b{color:#fff;font-weight:600}
 .journey{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:18px;margin-top:48px}
 .j-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;gap:10px;position:relative}
 .j-card .tag{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
@@ -309,6 +321,7 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
 @media (max-width:1024px){
   .pain-grid{grid-template-columns:repeat(2,1fr)}
   .journey{grid-template-columns:1fr 1fr}
+  .sales-cards{grid-template-columns:1fr}
 }
 @media (min-width:561px) and (max-width:700px){
   .hero .btn-primary svg{display:none}
@@ -316,7 +329,7 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
   .hero-grid{grid-template-columns:1.35fr .65fr}
 }
 @media (max-width:860px){
-  .hero-grid,.pains-head,.bridge-grid,.tradu-grid,.aud-grid,.about-grid,.form-grid,.expect{grid-template-columns:1fr}
+  .sales-head,.hero-grid,.pains-head,.bridge-grid,.tradu-grid,.aud-grid,.about-grid,.form-grid,.expect{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .exp-img{min-height:0;aspect-ratio:16/10}
   .aud-img{aspect-ratio:auto;background:var(--navy-800)}
@@ -392,6 +405,7 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
         <li><a href="#desafios">O desafio</a></li>
         <li><a href="#tradutometro">Tradutômetro</a></li>
         <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#vendas">Vendas</a></li>
         <li><a href="#fabio">Quem conduz</a></li>
         <li><a href="#faq">Dúvidas</a></li>
         <li class="nav-cta-mobile"><a href="#agendar" class="btn btn-primary" data-cta="menu_mobile">Agendar conversa estratégica</a></li>
@@ -577,6 +591,40 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
   </div>
 </section>
 
+<!-- 5b. TREINAMENTO PARA EQUIPES DE VENDAS -->
+<section class="on-dark sales" id="vendas" aria-labelledby="vendas-title">
+  <div class="container">
+    <div class="sales-head reveal">
+      <div>
+        <span class="eyebrow">Para equipes comerciais</span>
+        <h2 id="vendas-title">Treinamento para <span class="hl" style="display:block">equipes de vendas</span></h2>
+      </div>
+      <p class="lead">Quando as vendas caem entre os clientes mais jovens, o problema costuma estar na forma de se comunicar. Preparamos o time comercial para vender para a Geração Z e a liderança para engajar quem vende.</p>
+    </div>
+    <div class="sales-cards">
+      <article class="s-card reveal">
+        <span class="s-num">01</span>
+        <h3>Comportamento de consumo da Geração Z</h3>
+        <p>Como o cliente jovem pesquisa, compara e decide, e o que isso muda na abordagem comercial.</p>
+      </article>
+      <article class="s-card reveal">
+        <span class="s-num">02</span>
+        <h3>Comunicação na venda</h3>
+        <p>Abordagem, linguagem e resposta a objeções, praticadas em situações reais com o Tradutômetro.</p>
+      </article>
+      <article class="s-card reveal">
+        <span class="s-num">03</span>
+        <h3>Liderança do time comercial</h3>
+        <p>Metas, cobrança e feedback para engajar e reter vendedores jovens.</p>
+      </article>
+    </div>
+    <div class="sales-foot reveal">
+      <p><b>Indicado para</b> imobiliárias e construtoras, marcas e varejo, e qualquer operação com vendedores ou clientes jovens.</p>
+      <a href="#agendar" class="btn btn-primary" data-cta="vendas" data-preset="Treinamento para equipe de vendas">Quero treinar minha equipe de vendas</a>
+    </div>
+  </div>
+</section>
+
 <!-- 6. PARA QUEM -->
 <section aria-labelledby="quem-title">
   <div class="container aud-grid">
@@ -719,6 +767,7 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
             <option>Dificuldade na condução de feedbacks</option>
             <option>Rotatividade de jovens talentos</option>
             <option>Alinhar expectativas entre liderança e novas gerações</option>
+            <option>Treinamento para equipe de vendas</option>
             <option>Outro</option>
           </select><span class="err">Selecione o principal desafio.</span></div>
         <div class="field"><label for="detalhe">Quer contar um pouco mais? <span style="font-weight:400;color:var(--muted)">(opcional)</span></label><textarea id="detalhe" name="detalhe" rows="2" style="min-height:64px" placeholder="Ex.: temos 15 estagiários e os gestores relatam dificuldade com feedback"></textarea></div>
@@ -752,6 +801,7 @@ footer .f-cta:hover{background:rgba(46,196,182,.12);color:var(--navy-800)}
         <li><a href="#desafios">O desafio</a></li>
         <li><a href="#tradutometro">Tradutômetro</a></li>
         <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#vendas">Vendas</a></li>
         <li><a href="#fabio">Quem conduz</a></li>
         <li><a href="#faq">Dúvidas</a></li>
       </ul>
@@ -779,6 +829,11 @@ window.dataLayer = window.dataLayer || [];
 const track = (event, data = {}) => { window.dataLayer.push({ event, ...data }); };
 
 document.getElementById('y').textContent = new Date().getFullYear();
+
+/* CTAs que pré-selecionam o desafio no formulário */
+document.querySelectorAll('[data-preset]').forEach(a => a.addEventListener('click', () => {
+  const sel = document.getElementById('desafio'); sel.value = a.dataset.preset; sel.closest('.field').classList.remove('invalid');
+}));
 
 /* Menu mobile */
 const header = document.querySelector('.header'), menuBtn = document.getElementById('menu-btn');
